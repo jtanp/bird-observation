@@ -9,3 +9,5 @@ frontend/node_modules
 *.iml
 *.ipr
 .vscode/
+*.sql
+*.yml

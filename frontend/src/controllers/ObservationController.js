@@ -1,6 +1,3 @@
-//import birds from '../bird.json';
-
-
 /**Fetch birds from database and return array of birds */
 export const getBirds = () => fetch(
   `http://localhost:8080/birds`,
@@ -12,21 +9,6 @@ export const getBirds = () => fetch(
   }
 )
   .then((res) => res.json())
-
-/*
-export async function getBirds(){
-    fetch("http://localhost:8080/birds")
-    .then(response => response.json()) //converts text to json
-    .then(data=>{
-        return(data)
-    })
-    .catch((error) => {
-        //tilapäisesti palautetaan json paikallisesti
-        return;//jsonista
-        //console.error('Error:', error);
-    });
-}
-*/
 
 /**Fetch observations from database and return array of observations */
 export const getObservations = () => fetch(
