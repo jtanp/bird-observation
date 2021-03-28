@@ -11,7 +11,6 @@ function App() {
         <Navbar/>
         <ObservationContainer/>
       </Router>
-      
     </div>
   );
 }

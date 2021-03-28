@@ -22,14 +22,15 @@ export const getObservations = () => fetch(
 )
   .then((res) => res.json())
 
-/** Saves given observation data to database */
-export async function create(observation) {
-    const response = await fetch("http://localhost:8080/observation", {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(observation) // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-}
+/**Creates a new observation */
+export const createObservation = (observation) => fetch(
+  `http://localhost:8080/observation`,
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(observation)
+  }
+)
+  .then((res) => res.json())

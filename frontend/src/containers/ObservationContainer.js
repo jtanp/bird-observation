@@ -1,15 +1,13 @@
 import React,{useState, useEffect} from "react";
 import ObservationComponent from "../components/ObservationComponent";
-import {getBirds, create} from '../controllers/ObservationController';
+import {getBirds, createObservation, getObservations} from '../controllers/ObservationController';
 
 
 const ObservationContainer=()=>{
-    //https://reactjs.org/docs/hooks-state.html
-    const [birds, setBirds] = useState([]); 
+    const [birds, setBirds] = useState([]);
+    const [observations, setObservations] = useState([]);
     const [observation, setObservation] = useState({});
 
-    //function is called once at the beginning
-    //https://reactjs.org/docs/hooks-effect.html
     useEffect(()=>{
         initData();
     },[]);
@@ -20,26 +18,33 @@ const ObservationContainer=()=>{
             setBirds(data);
         })
         .catch((error) => {
-            alert("Fetching bird data failed.", error);
+            alert("Fetching birds failed.", error);
+        });
+        getObservations()
+        .then(data=>{
+            setObservations(data);
+        })
+        .catch((error) => {
+            alert("Fetching observations failed.", error);
         });
     }
 
     //takes care updating the description
     const handleChange = (e) => {
         let newObservation = {...observation};
-        newObservation[e.target.key] = e.target.value;
+        newObservation[e.target.name] = e.target.value;
         setObservation(newObservation);
     };
 
     const handleSubmit=()=>{
-        const result = create(observation);
+        const result = createObservation(observation);
         console.log(result);
-        alert("Saved " +JSON.stringify(observation));
+        alert("Observation saved!");
     }
     
     return(
         <div>
-            <ObservationComponent theBirds={birds} submit={handleSubmit} observation={observation} change={handleChange}/>
+            <ObservationComponent theBirds={birds} submit={handleSubmit} observation={observation} observations={observations} change={handleChange}/>
         </div>
     );
 }

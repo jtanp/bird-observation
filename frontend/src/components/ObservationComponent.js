@@ -14,7 +14,7 @@ const ObservationComponent =(props)=>{
             <select onChange={e=>props.change(e)} name="bird">{birdOptions}</select><br />
             <label>Place: </label>
             <input onChange={e=>props.change(e)} name="place" value={props.observation.place} type="text"></input><br />
-            <label>Time: </label>
+            <label>Time (YYYY-MM-DD): </label>
             <input onChange={e=>props.change(e)} name="time" value={props.observation.time} type="text"></input><br />
             <label>User: </label>
             <input onChange={e=>props.change(e)} name="user" value={props.observation.user} type="text"></input><br />

@@ -27,9 +27,8 @@ label {
 
 .Form label {
   display: inline-block;
-  width: 50px;
+  width: 160px;
   padding: 3px;
-  margin-right: 5px;
   text-align: right;
 }
 
@@ -42,7 +41,7 @@ label {
   -webkit-box-sizing:content-box; 
   box-sizing:content-box;
   border:1px solid #222222;
-  margin: 5px 50px 5px 0;
+  margin: 5px 150px 5px 5px;
 }
 
 .Form button {
