@@ -1,0 +1,14 @@
+version: '3'
+services:
+    mariadb:
+        image: mariadb:10.4
+        container_name: bird-observation-db
+        ports:
+            - 3306:3306
+        volumes:
+            - ./bird.sql:/docker-entrypoint-initdb.d/bird.sql
+        environment:
+            MYSQL_USER: test
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test
+            MYSQL_DATABASE: bird
