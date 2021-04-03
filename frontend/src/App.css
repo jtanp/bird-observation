@@ -16,6 +16,10 @@ h1, h2 {
   color: #fff;
 }
 
+p {
+  color: #fff;
+}
+
 label {
   color: #fff;
 }
@@ -105,4 +109,8 @@ nav .title {
 .navloginlink a:hover {
   background-color: #505050;
   transition: all 0.2s ease-in-out;
+}
+
+.about p {
+  font-size: 28px;
 }
