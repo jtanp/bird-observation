@@ -1,7 +1,7 @@
-package fi.vamk.e1700807.bird.controllers;
+package fi.jtanp.bird.controllers;
 
-import fi.vamk.e1700807.bird.entities.Observation;
-import fi.vamk.e1700807.bird.repositories.ObservationRepository;
+import fi.jtanp.bird.entities.Observation;
+import fi.jtanp.bird.repositories.ObservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package fi.vamk.e1700807.bird.entities;
+package fi.jtanp.bird.entities;
 
 import java.sql.Date;
 

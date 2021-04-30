@@ -1,4 +1,4 @@
-package fi.vamk.e1700807.bird.entities;
+package fi.jtanp.bird.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,9 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Bird {
-    // {"id":"CYGOLO","latin":"Cygnus
-    // olor","finnish":"Kyhmyjoutsen","swedish":"Kn\u00f6lsvan","english":"Mute
-    // Swan"}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

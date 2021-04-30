@@ -1,4 +1,4 @@
-package fi.vamk.e1700807.bird;
+package fi.jtanp.bird;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

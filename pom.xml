@@ -8,7 +8,7 @@
 		<version>2.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>fi.vamk.e1700807</groupId>
+	<groupId>fi.jtanp</groupId>
 	<artifactId>bird-observation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bird-observation</name>
@@ -48,7 +48,18 @@
 			<artifactId>json-simple</artifactId>
 			<version>1.1</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

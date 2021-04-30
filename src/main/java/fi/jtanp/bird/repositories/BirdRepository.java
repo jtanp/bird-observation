@@ -1,6 +1,6 @@
-package fi.vamk.e1700807.bird.repositories;
+package fi.jtanp.bird.repositories;
 
-import fi.vamk.e1700807.bird.entities.Bird;
+import fi.jtanp.bird.entities.Bird;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
