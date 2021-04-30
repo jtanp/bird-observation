@@ -15,14 +15,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/** Takes care of RESTful commands for the client */
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class BirdController {
     @Autowired
     BirdRepository repository;
 
-
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/birds")
     public Iterable<Bird> getAll() {
         return repository.findByOrderByFinnish();
@@ -36,7 +34,7 @@ public class BirdController {
         JSONParser parser = new JSONParser();
         try {
             Object obj = parser.parse(new FileReader("bird.json"));
-            // muunnetaan tiedosto JSON arrayksi
+
             JSONArray birds = (JSONArray) obj;
             Iterator<JSONObject> iterator = birds.iterator();
             while (iterator.hasNext()) {
