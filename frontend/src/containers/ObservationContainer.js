@@ -1,9 +1,8 @@
 import React,{useState, useEffect} from "react";
-import ObservationComponent from "../components/ObservationComponent";
+import ObservationComponent from "../components/observation/ObservationComponent";
 import {getBirds, createObservation, getObservations} from '../controllers/ObservationController';
 
-
-const ObservationContainer=()=>{
+const ObservationContainer = () => {
     const [birds, setBirds] = useState([]);
     const [observations, setObservations] = useState([]);
     const [observation, setObservation] = useState({});
@@ -29,7 +28,6 @@ const ObservationContainer=()=>{
         });
     }
 
-    //takes care updating the description
     const handleChange = (e) => {
         let newObservation = {...observation};
         newObservation[e.target.name] = e.target.value;
@@ -44,7 +42,7 @@ const ObservationContainer=()=>{
     
     return(
         <div>
-            <ObservationComponent theBirds={birds} submit={handleSubmit} observation={observation} observations={observations} change={handleChange}/>
+            <ObservationComponent birds={birds} submit={handleSubmit} observation={observation} observations={observations} change={handleChange}/>
         </div>
     );
 }

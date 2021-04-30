@@ -1,0 +1,32 @@
+.observationForm {
+  display: block;
+  text-align: center;
+}
+
+.observationForm label {
+  color: #fff;
+  display: inline-block;
+  width: 160px;
+  padding: 3px;
+  text-align: right;
+}
+
+.observationForm input,
+.observationForm select {
+  display: inline-block;
+  width: 175px;
+  padding: 5px;
+  -ms-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 1px solid #222222;
+  border-radius: 5px;
+  margin: 5px 5px 5px 5px;
+}
+
+.observationForm button {
+  width: 100px;
+  padding: 5px;
+  cursor: pointer;
+}
