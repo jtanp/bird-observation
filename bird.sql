@@ -22,9 +22,9 @@ CREATE TABLE `observation` (
   `bird` int(11) NOT NULL,
   `place` varchar(255) DEFAULT NULL,
   `time` date DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT fk_user_observation FOREIGN KEY (username)
+  CONSTRAINT fk_user_observation FOREIGN KEY (user)
         REFERENCES user (username)
         ON DELETE CASCADE
 );
