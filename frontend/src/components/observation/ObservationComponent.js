@@ -14,11 +14,9 @@ const ObservationComponent = (props) => {
             <label>Bird: </label>
             <select onChange={e=>props.change(e)} name="bird">{birdOptions}</select><br />
             <label>Place: </label>
-            <input onChange={e=>props.change(e)} name="place" value={props.observation.place} type="text"></input><br />
-            <label>Time (YYYY-MM-DD): </label>
-            <input onChange={e=>props.change(e)} name="time" value={props.observation.time} type="text"></input><br />
-            <label>User: </label>
-            <input onChange={e=>props.change(e)} name="user" value={props.observation.user} type="text"></input><br />
+            <input type="text" onChange={e=>props.change(e)} name="place" value={props.observation.place}></input><br />
+            <label>Time: </label>
+            <input type="date" onChange={e=>props.change(e)} name="time" placeholder="YYYY-MM-DD" value={props.observation.time}></input><br />
             <button onClick={props.submit}>Save</button>
         </div>
     );

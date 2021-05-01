@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from "react";
+import { Redirect } from "react-router";
 import ObservationComponent from "../components/observation/ObservationComponent";
 import {getBirds, createObservation, getObservations} from '../controllers/ObservationController';
 
-const ObservationContainer = () => {
+const ObservationContainer = ({isLoggedIn}) => {
     const [birds, setBirds] = useState([]);
     const [observations, setObservations] = useState([]);
     const [observation, setObservation] = useState({});
@@ -34,10 +35,15 @@ const ObservationContainer = () => {
         setObservation(newObservation);
     };
 
-    const handleSubmit=()=>{
+    const handleSubmit = () => {
+        observation["user"] = JSON.parse(localStorage.getItem("loggedUser")).username;
         const result = createObservation(observation);
         console.log(result);
         alert("Observation saved!");
+    }
+
+    if (!isLoggedIn) {
+        return <Redirect to="/login" />;
     }
     
     return(

@@ -1,32 +1,37 @@
 .observationForm {
   display: block;
   text-align: center;
+  width: 300px;
+  margin: auto;
 }
 
 .observationForm label {
-  color: #fff;
   display: inline-block;
-  width: 160px;
+  color: #fff;
+  width: 20%;
   padding: 3px;
-  text-align: right;
+  text-align: left;
 }
 
 .observationForm input,
 .observationForm select {
   display: inline-block;
-  width: 175px;
-  padding: 5px;
-  -ms-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0px 5px 0px;
   border: 1px solid #222222;
   border-radius: 5px;
-  margin: 5px 5px 5px 5px;
+  box-sizing: border-box;
 }
 
 .observationForm button {
-  width: 100px;
-  padding: 5px;
+  color: #fff;
+  background-color: #288246;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0px 5px 0px;
+  border: 1px solid #222222;
+  border-radius: 5px;
+  box-sizing: border-box;
   cursor: pointer;
 }

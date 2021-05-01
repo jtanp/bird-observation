@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useHistory } from "react-router-dom";
 import './Login.css';
 
-const Login = () => {
+const Login = (props) => {
     const [info, setInfo] = useState({
         username: "",
         password: ""
@@ -29,7 +29,8 @@ const Login = () => {
         })
         .then(data => {
             if (data !== null) {
-                console.log(data);
+                localStorage.setItem("loggedUser", JSON.stringify(data));
+                props.login();
                 history.push("/");
             }
         }
