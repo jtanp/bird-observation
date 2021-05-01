@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  color: white;
+  color: #fff;
   background: #285a37;
 }
 
@@ -38,8 +38,18 @@ nav .title {
   background-color: #222222;
 }
 
+.navusername a {
+  color: #fff;
+  font-size: 22px;
+  margin: 0px 10px 5px 0px;
+  padding: 0.2rem;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+
 .navloginlink a {
-  color: white;
+  color: #fff;
   background-color: #303030;
   font-size: large;
   text-decoration: none;

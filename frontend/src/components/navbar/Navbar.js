@@ -4,15 +4,18 @@ import "./Navbar.css";
 
 const Navbar = (props) => {
   const getUsername = () => {
-    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-    return loggedUser?.username;
-  }
+    if (localStorage.getItem("loggedUser") != null | undefined) {
+      const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+      return loggedUser?.username;
+    }
+    return null;
+  };
 
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("loggedUser");
     props.logout();
-  }
+  };
 
   return (
     <nav>
@@ -29,9 +32,9 @@ const Navbar = (props) => {
           </li>
           {props.isLoggedIn ? (
             <li>
-                <NavLink to="/save">Save</NavLink>
+              <NavLink to="/save">Save</NavLink>
             </li>
-          ) : (null)}
+          ) : null}
         </ul>
       </div>
       {props.isLoggedIn ? (
@@ -40,7 +43,9 @@ const Navbar = (props) => {
             <NavLink to="/user">{getUsername()}</NavLink>
           </div>
           <div className="navloginlink">
-            <NavLink to="/" onClick={handleLogout}>Logout</NavLink>
+            <NavLink to="/" onClick={handleLogout}>
+              Logout
+            </NavLink>
           </div>
         </>
       ) : (
@@ -49,7 +54,7 @@ const Navbar = (props) => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
 
 export default Navbar;
