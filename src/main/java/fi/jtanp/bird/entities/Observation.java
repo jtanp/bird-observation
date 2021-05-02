@@ -15,7 +15,7 @@ public class Observation {
     private int bird;
     private String place;
     private Date time;
-    private String user;
+    private int userId;
 
     public Observation() {
     }
@@ -52,12 +52,11 @@ public class Observation {
         this.time = time;
     }
 
-    public String getUser() {
-        return user;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
-
 }

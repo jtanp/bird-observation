@@ -15,6 +15,6 @@ public class BirdController {
 
     @GetMapping("/birds")
     public Iterable<Bird> getAll() {
-        return repository.findByOrderByFinnish();
+        return repository.findByOrderByEnglish();
     }
 }

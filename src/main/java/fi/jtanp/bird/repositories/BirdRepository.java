@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BirdRepository extends CrudRepository<Bird, Integer> {
     List<Bird> findByOrderByFinnish();
-
+    List<Bird> findByOrderByEnglish();
 }

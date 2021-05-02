@@ -1,19 +1,21 @@
 package fi.jtanp.bird.controllers;
 
+import fi.jtanp.bird.entities.Observation;
 import fi.jtanp.bird.entities.User;
+import fi.jtanp.bird.repositories.ObservationRepository;
 import fi.jtanp.bird.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ObservationRepository observationRepository;
 
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -34,5 +36,10 @@ public class UserController {
             throw new Exception("Invalid username or password.");
         }
         return checkUser;
+    }
+
+    @GetMapping("/users/{id}/observations")
+    private Iterable<Observation> getUserObservations(@PathVariable int id) {
+        return observationRepository.findByUserId(id);
     }
 }
