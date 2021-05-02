@@ -7,6 +7,7 @@ import About from './components/about/About';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Home from './components/home/Home';
+import Profile from './components/profile/Profile';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
         <Route path="/save" exact component={() => <ObservationContainer isLoggedIn={isLoggedIn}/>} />
+        <Route path="/profile" exact component={() => <Profile isLoggedIn={isLoggedIn}/>} />
         <Route path="/login" exact render={props => (<Login login={login} />)} />
         <Route path="/register" exact component={Register} />
       </Router>

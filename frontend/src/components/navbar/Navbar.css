@@ -48,6 +48,11 @@ nav .title {
   transition: all 0.2s ease-in-out;
 }
 
+.navusername a:hover {
+  color: #222222;
+  transition: all 0.2s ease-in-out;
+}
+
 .navloginlink a {
   color: #fff;
   background-color: #303030;

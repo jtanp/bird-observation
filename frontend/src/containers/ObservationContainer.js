@@ -36,7 +36,7 @@ const ObservationContainer = ({isLoggedIn}) => {
     };
 
     const handleSubmit = () => {
-        observation["user"] = JSON.parse(localStorage.getItem("loggedUser")).username;
+        observation["userId"] = JSON.parse(localStorage.getItem("loggedUser")).id;
         const result = createObservation(observation);
         console.log(result);
         alert("Observation saved!");

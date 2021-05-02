@@ -40,7 +40,7 @@ const Navbar = (props) => {
       {props.isLoggedIn ? (
         <>
           <div className="navusername">
-            <NavLink to="/user">{getUsername()}</NavLink>
+            <NavLink to="/profile">{getUsername()}</NavLink>
           </div>
           <div className="navloginlink">
             <NavLink to="/" onClick={handleLogout}>
