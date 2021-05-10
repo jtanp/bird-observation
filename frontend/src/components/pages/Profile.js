@@ -1,8 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router";
-import "./Profile.css";
+import { getUserObservations } from "../../controllers";
 import ReactTable from "react-table-6";
 import "react-table-6/react-table.css";
+import styled from "styled-components";
+
+const ProfileContainer = styled.div`
+  width: 100%;
+
+  .ReactTable {
+    max-width: 40%;
+    color: #fff;
+    background-color: #303030;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ReactTable .rt-thead {
+    font-weight: bold;
+    background-color: #404040;
+  }
+
+  .ReactTable .-pagination .-btn  {
+    color: #fff;
+  }
+
+  .ReactTable .-pagination input,
+  .ReactTable .-pagination select {
+    color: #fff;
+    background-color: #303030;
+  }
+`;
 
 const Profile = ({ isLoggedIn }) => {
   const [userObservations, setUserObservations] = useState([]);
@@ -17,18 +45,8 @@ const Profile = ({ isLoggedIn }) => {
   useEffect(() => {
     if (isLoggedIn) {
       const id = JSON.parse(localStorage.getItem("loggedUser")).id;
-      const getUserObservations = (id) => {
-        fetch(`http://localhost:8080/users/${id}/observations`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((res) => res.json())
-        .then((data) => setUserObservations(data))
-        .catch((error) => alert("Error fetching user observations", error));
-      };
-      getUserObservations(id);
+      const data = getUserObservations(id);
+      setUserObservations(data);
     }
   }, [isLoggedIn]);
 
@@ -37,12 +55,10 @@ const Profile = ({ isLoggedIn }) => {
   }
 
   return (
-    <div className="profile">
-      <div className="observations">
+      <ProfileContainer>
         <h2>Your observations</h2>
         <ReactTable columns={columns} data={userObservations} showPagination={true} pageSize={5} />
-      </div>
-    </div>
+      </ProfileContainer>
   );
 };
 

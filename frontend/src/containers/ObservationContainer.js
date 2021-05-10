@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import { Redirect } from "react-router";
-import ObservationComponent from "../components/observation/ObservationComponent";
-import {getBirds, createObservation, getObservations} from '../controllers/ObservationController';
+import { Observation } from "../components/pages";
+import {getBirds, createObservation, getObservations} from '../controllers';
 
 const ObservationContainer = ({isLoggedIn}) => {
     const [birds, setBirds] = useState([]);
@@ -48,7 +48,7 @@ const ObservationContainer = ({isLoggedIn}) => {
     
     return(
         <div>
-            <ObservationComponent birds={birds} submit={handleSubmit} observation={observation} observations={observations} change={handleChange}/>
+            <Observation birds={birds} submit={handleSubmit} observation={observation} observations={observations} change={handleChange}/>
         </div>
     );
 }

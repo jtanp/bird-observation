@@ -1,6 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import {
+  Nav,
+  NavTitle,
+  NavLinks,
+  NavButton,
+  NavUsername,
+  Link,
+  LinkItem,
+  LinkList,
+} from "./NavbarElements";
 
 const Navbar = (props) => {
   const getUsername = () => {
@@ -18,42 +26,32 @@ const Navbar = (props) => {
   };
 
   return (
-    <nav>
-      <div className="title">
-        <h1>Observations</h1>
-      </div>
-      <div className="navlinks">
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
+    <Nav>
+      <NavTitle>Observations</NavTitle>
+      <NavLinks>
+        <LinkList>
+          <LinkItem>
+            <Link to="/">Home</Link>
+          </LinkItem>
+          <LinkItem>
+            <Link to="/about">About</Link>
+          </LinkItem>
           {props.isLoggedIn ? (
-            <li>
-              <NavLink to="/save">Save</NavLink>
-            </li>
+            <LinkItem>
+              <Link to="/save">Save</Link>
+            </LinkItem>
           ) : null}
-        </ul>
-      </div>
+        </LinkList>
+      </NavLinks>
       {props.isLoggedIn ? (
         <>
-          <div className="navusername">
-            <NavLink to="/profile">{getUsername()}</NavLink>
-          </div>
-          <div className="navloginlink">
-            <NavLink to="/" onClick={handleLogout}>
-              Logout
-            </NavLink>
-          </div>
+          <NavUsername to="/profile">{getUsername()}</NavUsername>
+          <NavButton to="/" onClick={handleLogout}>Logout</NavButton>
         </>
       ) : (
-        <div className="navloginlink">
-          <NavLink to="/login">Login</NavLink>
-        </div>
+        <NavButton to="/login">Login</NavButton>
       )}
-    </nav>
+    </Nav>
   );
 };
 
