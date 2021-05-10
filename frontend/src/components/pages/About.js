@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../../styles";
+import { Container } from "../../theme/styles";
 
 const AboutContainer = styled(Container)`
   p {

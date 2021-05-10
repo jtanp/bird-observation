@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { userLogin } from "../../controllers";
-import { Container, Input, Button, Form, FormLink } from "../../styles";
+import { Container, Input, Button, Form, FormTitle, FormLink } from "../../theme/styles";
 
 const Login = (props) => {
   const [info, setInfo] = useState({
@@ -31,7 +31,7 @@ const Login = (props) => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <FormTitle>Login</FormTitle>
         <Input
           type="text"
           className="form-control"

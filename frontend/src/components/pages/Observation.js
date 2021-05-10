@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../styles";
+import { Button } from "../../theme/styles";
 
 const ObservationForm = styled.div`
   display: block;
@@ -10,7 +10,7 @@ const ObservationForm = styled.div`
 
   label {
     display: inline-block;
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
     width: 20%;
     padding: 3px;
     text-align: left;
@@ -28,8 +28,6 @@ const ObservationForm = styled.div`
 `;
 
 const Observation = (props) => {
-  //console.log(props.birds);
-
   const birdOptions =
     props.birds !== undefined &&
     props.birds.map((bird, index) => {
@@ -54,7 +52,7 @@ const Observation = (props) => {
         onChange={(e) => props.change(e)}
         name="place"
         value={props.observation.place}
-      ></input>
+      />
       <br />
       <label>Time: </label>
       <input
@@ -63,7 +61,7 @@ const Observation = (props) => {
         name="time"
         placeholder="YYYY-MM-DD"
         value={props.observation.time}
-      ></input>
+      />
       <br />
       <Button onClick={props.submit}>Save</Button>
     </ObservationForm>

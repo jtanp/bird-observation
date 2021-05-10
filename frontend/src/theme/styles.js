@@ -8,19 +8,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #222222;
-  }
-
-  h1, h2, h3 {
-    color: #fff;
-  }
-
-  p {
-    color: #fff;
-  }
-
-  span {
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors.dark};
   }
 `;
 
@@ -31,7 +20,7 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  color: #fff;
+  color: ${(props) => props.theme.colors.white};
   background-color: #288246;
   width: 100%;
   padding: 10px;
@@ -49,7 +38,7 @@ export const Input = styled.input`
   width: 100%;
   padding: 10px;
   margin: 5px 0px 5px 0px;
-  border: 1px solid #222222;
+  border: 1px solid ${(props) => props.theme.colors.dark};
   border-radius: 5px;
   box-sizing: border-box;
 `;
@@ -58,7 +47,7 @@ export const Select = styled.select`
   width: 100%;
   padding: 10px;
   margin: 5px 0px 5px 0px;
-  border: 1px solid #222222;
+  border: 1px solid ${(props) => props.theme.colors.dark};
   border-radius: 5px;
   box-sizing: border-box;
 `;
@@ -67,11 +56,11 @@ export const Form = styled.form`
   margin: auto;
   width: 250px;
   justify-content: center;
+`;
 
-  h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+export const FormTitle = styled.h2`
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const FormLink = styled.div`
@@ -80,6 +69,7 @@ export const FormLink = styled.div`
   text-align: right;
 
   a {
+    color: ${(props) => props.theme.colors.blue};
     text-decoration: none;
 
     &:hover {

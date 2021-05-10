@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { userRegister } from "../../controllers";
-import { Container, Input, Button, Form, FormLink } from "../../styles";
+import { Container, Input, Button, Form, FormTitle, FormLink } from "../../theme/styles";
 
 const Register = () => {
   const [info, setInfo] = useState({
@@ -33,7 +33,7 @@ const Register = () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <h2>Create a new user</h2>
+        <FormTitle>Create a new user</FormTitle>
         <Input
           type="text"
           className="form-control"
